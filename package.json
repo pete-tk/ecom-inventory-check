@@ -1,0 +1,18 @@
+{
+  "name": "ecom",
+  "version": "1.0.0",
+  "description": "In the e-commerce platform, during the checkout process, the system needs to validate the availability of items in the cart against the inventory database before proceeding with the payment process.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src"
+  },
+  "author": "PT",
+  "license": "ISC",
+  "dependencies": {
+    "and": "0.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
+  }
+}

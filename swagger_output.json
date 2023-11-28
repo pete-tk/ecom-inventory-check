@@ -1,0 +1,64 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/inventory/db": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/inventory/check": {
+      "post": {
+        "description": "**JSON format is an array of objects.**\n```\n[\n  {\n    \"itemId\":\"Number of Item ID\",\n    \"quantity\":\"Number of quantity\"\n  }\n]\n```\n",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/stackoverflow"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "404": {
+            "description": "ITEM NOT FOUND"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "stackoverflow" : {
+      "type" : "array",
+      "example": [
+        {"itemId":"14","quantity":"11"},
+        {"itemId":"2","quantity":"1"},
+        {"itemId":"3","quantity":"5"},
+        {"itemId":"13","quantity":"2"},
+        {"itemId":"15","quantity":"20"}
+      ]
+      
+    }
+  }
+}
